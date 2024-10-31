@@ -23,9 +23,10 @@ def wait(url: str, webhook: str, wait_time: int, words: list[str]):
     while True:
         if exist_webpage(url):
             if exist_words(url, words):
-                requests.post(webhook, json={"text": f"Webpage exists with words {words}.\n{url}"})
+                requests.post(webhook, json={"text": f"【祝】Award Day 通過\n{url}"})
+                print("【祝】Award Day 通過")
             else:
-                requests.post(webhook, json={"text": f"Webpage exists but words {words} not found.\n{url}"})
+                requests.post(webhook, json={"text": f"残念\n{url}"})
             break
         else:
             print(datetime.now(), "Waiting")
