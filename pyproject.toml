@@ -5,7 +5,9 @@ description = "Add your description here"
 authors = [
     { name = "Hietan", email = "hietan622@gmail.com" }
 ]
-dependencies = []
+dependencies = [
+    "requests>=2.32.3",
+]
 readme = "README.md"
 requires-python = ">= 3.8"
 
@@ -16,6 +18,9 @@ build-backend = "hatchling.build"
 [tool.rye]
 managed = true
 dev-dependencies = []
+
+[tool.rye.scripts]
+main = "python src/webpage_change_detector/main.py"
 
 [tool.hatch.metadata]
 allow-direct-references = true
